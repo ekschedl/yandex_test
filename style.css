@@ -127,7 +127,9 @@ body {
     min-width: 375px;
     overflow-x: hidden;
 }
-
+h1{
+    font-size: 36px;
+}
 .screen-reader-text {
     display: none;
 }
@@ -204,7 +206,7 @@ body {
 
 
 .text-upper {
-    font-size: 36px;
+   font-size: 36px;
     text-transform: uppercase;
     font-weight: 100;
 }
@@ -314,14 +316,90 @@ padding:18px 20px 18px 20px;
     top:13px;
     margin:48px 20px 0 20px;
 }
-.section-first-text {
+#section-first .text-upper {
     font-size: 28px;
+    line-height: 38px;
+    display: block;
 }
-.image-container img {
+.img-first img,
+.img-second img {
     width: 100%;
     height: auto;    
 }
 
-.image-container.first {
-    margin-top: 24px;
+.img-first {
+    margin:24px 0  24.4px 0px;
+}
+
+.red {
+    color: var(--red-line);
+   font-weight: 700;
+}
+
+.img-second img {
+    margin:34px 0  24px 0px;
+}
+
+/*  --- Table ---- */
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse; /* Убираем двойные границы */
+    border: none; /* Убираем внешнюю границу */
+}
+
+.styled-table td {
+    border: 1px solid grey; /* Внутренние одинарные серые границы */
+    padding: 8px; /* Отступы внутри ячеек */
+}
+
+.styled-table td:nth-child(2) {
+    font-weight: bold; /* Жирный текст во втором столбце */
+}
+
+.styled-table tr:first-child td {
+    border-top: 0; /* Убираем верхнюю границу для первой строки */
+}
+
+.styled-table tr td:first-child {
+    border-left: 0; /* Убираем левую границу для первого столбца */
+}
+
+.styled-table tr:last-child td {
+    border-bottom: 0; /* Убираем нижнюю границу для последней строки */
+}
+
+.styled-table tr td:last-child {
+    border-right: 0; /* Убираем правую границу для последнего столбца */
+}
+/* Media query для маленьких экранов */
+@media (max-width: 600px) {
+    .styled-table,
+    .styled-table tr {
+        display: block;
+    }
+    .styled-table tr {
+        margin-bottom: 10px;
+    }
+    .styled-table td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        border: none;
+        border-bottom: 1px solid grey;
+        margin-bottom: 5px;
+    }
+    tbody {
+        display: block;
+    }
+    
+    .styled-table td:nth-child(2) {
+        font-weight: normal;
+    }
+    .styled-table tr:last-child td {
+        border-bottom: none; /* Убираем нижнюю границу у ячеек в последней строке */
+    }
+    .styled-table td:nth-child(1) {
+        border: none; /* Убираем все границы у первого столбца */
+    }
 }
