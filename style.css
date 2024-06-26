@@ -1,0 +1,302 @@
+@charset "UTF-8";
+
+/* merriweather-300 - cyrillic_latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Merriweather';
+    font-style: normal;
+    font-weight: 300;
+    src: url('./assets/fonts/merriweather-v30-cyrillic_latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* merriweather-300italic - cyrillic_latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Merriweather';
+    font-style: italic;
+    font-weight: 300;
+    src: url('./assets/fonts/merriweather-v30-cyrillic_latin-300italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* merriweather-regular - cyrillic_latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Merriweather';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./assets/fonts/merriweather-v30-cyrillic_latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* merriweather-italic - cyrillic_latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Merriweather';
+    font-style: italic;
+    font-weight: 400;
+    src: url('./assets/fonts/merriweather-v30-cyrillic_latin-italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* merriweather-700 - cyrillic_latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Merriweather';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./assets/fonts/merriweather-v30-cyrillic_latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* merriweather-700italic - cyrillic_latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Merriweather';
+    font-style: italic;
+    font-weight: 700;
+    src: url('./assets/fonts/merriweather-v30-cyrillic_latin-700italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* merriweather-900 - cyrillic_latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Merriweather';
+    font-style: normal;
+    font-weight: 900;
+    src: url('./assets/fonts/merriweather-v30-cyrillic_latin-900.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* merriweather-900italic - cyrillic_latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Merriweather';
+    font-style: italic;
+    font-weight: 900;
+    src: url('./assets/fonts/merriweather-v30-cyrillic_latin-900italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
+  /* golos-text-regular - cyrillic_latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Golos Text';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./assets/fonts/golos-text-v4-cyrillic_latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* golos-text-500 - cyrillic_latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Golos Text';
+    font-style: normal;
+    font-weight: 500;
+    src: url('./assets/fonts/golos-text-v4-cyrillic_latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* golos-text-600 - cyrillic_latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Golos Text';
+    font-style: normal;
+    font-weight: 600;
+    src: url('./assets/fonts/golos-text-v4-cyrillic_latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* golos-text-800 - cyrillic_latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Golos Text';
+    font-style: normal;
+    font-weight: 800;
+    src: url('./assets/fonts/golos-text-v4-cyrillic_latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+:root {
+    --beige: #E7DBD0;
+    --grey-dark: #595653; 
+    --red-line:#F54932;
+    --font:#313131;
+    --beige2:#E9DED4;
+    --btn-dark: #1F1F1F;
+
+
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    min-width: 375px;
+  
+}
+
+body {
+   
+    font-family: 'Merriweather';
+    color: var(--font);
+    min-width: 375px;
+    overflow-x: hidden;
+}
+.text-big{
+    font-size: 36px;
+    text-transform: uppercase;
+    font-weight: 100;
+
+}
+.screen-reader-text {
+    display: none;
+}
+
+
+
+.logo img{
+    width: 213px;
+    height: 32px;
+    margin: 18px 0 0 20px;
+}
+
+.header-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    text-align: center;
+
+    flex-direction: column;
+  
+    height: 812px;
+}
+
+.header-wrapper::before,
+.header-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.header-wrapper::before {
+    background-image: url("/images/image\ 23.png");
+    opacity: 0.5; /* Настройте прозрачность для наложения */
+}
+
+.header-wrapper::after {
+    background-image: url('/images/copper_beige.png');
+    opacity: 0.5; /* Настройте прозрачность для наложения */
+}
+
+.logo_text_buttons {
+    width: min-content;
+    z-index: 1;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding:0 20px;
+ 
+}
+
+
+
+
+
+.image-wrapper img {
+    width: 100%;
+    height: auto;
+    clip-path: inset(5px 0 0 0);
+    top: -130px;
+    position: relative;
+}
+
+
+
+.text-big {
+    display: flex;
+    flex-direction: column; /* Spaltenausrichtung für Flexbox */
+    padding-top: 40px;
+    line-height: 110%;
+}
+
+.text-big span:nth-child(1),
+.text-big span:nth-child(2) {
+    text-align: left; /* Links ausrichten */
+    width: 100%; /* Volle Breite */
+    min-width:335px;
+}
+
+.text-big span:nth-child(3) {
+    text-align: center; /* Zentriert ausrichten */
+    width: 100%; /* Volle Breite */
+}
+
+.text-big span:nth-child(4) {
+    text-align: right; /* Rechts ausrichten */
+    width: 100%; /* Volle Breite */
+   
+}
+
+.text-small {
+    line-height: 130%;
+    font-family: 'Golos Text';
+    text-align: left;
+    width: auto;
+    font-size:18px;
+    padding:24px 0 32px 0;
+    
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    margin: 7px;
+    cursor: pointer;
+    border: none;
+    line-height: 130%;
+    font-family: 'Golos Text';
+    font-size: 16px;
+    border-radius: 66px;
+    text-decoration: none; /* Remove underline from links */
+    text-align: center; /* Center align text */
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.btn-black {
+    background-color: var(--btn-dark);
+    color: #FFFFFF;
+}
+
+.btn-white{
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--btn-dark);
+}
+
+.button:hover {
+    background-color: #555;
+}
+
+
+.red-line {
+    background-color: var(--red-line);
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-size: 16px;
+    padding: 10px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    height: 36px;
+    top: -172px;
+    font-family: 'Merriweather';
+    font-weight: 100;
+}
+.scrolling-text {
+    display: inline-block; /* Делаем элемент строчным */
+    position: absolute; /* Позиционируем абсолютно */
+    
+}
