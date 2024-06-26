@@ -127,18 +127,15 @@ body {
     min-width: 375px;
     overflow-x: hidden;
 }
-.text-big{
-    font-size: 36px;
-    text-transform: uppercase;
-    font-weight: 100;
 
-}
 .screen-reader-text {
     display: none;
 }
 
 
-
+.logo{
+    height: 50px;
+}
 .logo img{
     width: 213px;
     height: 32px;
@@ -200,33 +197,38 @@ body {
 .image-wrapper img {
     width: 100%;
     height: auto;
-    clip-path: inset(5px 0 0 0);
-    top: -130px;
+    clip-path: inset(2px 0 0 0);
+    top: -127px;
     position: relative;
 }
 
 
+.text-upper {
+    font-size: 36px;
+    text-transform: uppercase;
+    font-weight: 100;
+}
 
-.text-big {
+.header-text {
     display: flex;
     flex-direction: column; /* Spaltenausrichtung für Flexbox */
     padding-top: 40px;
-    line-height: 110%;
+    line-height: 111%;
 }
 
-.text-big span:nth-child(1),
-.text-big span:nth-child(2) {
+.header-text span:nth-child(1),
+.header-text span:nth-child(2) {
     text-align: left; /* Links ausrichten */
     width: 100%; /* Volle Breite */
     min-width:335px;
 }
 
-.text-big span:nth-child(3) {
+.header-text span:nth-child(3) {
     text-align: center; /* Zentriert ausrichten */
     width: 100%; /* Volle Breite */
 }
 
-.text-big span:nth-child(4) {
+.header-text span:nth-child(4) {
     text-align: right; /* Rechts ausrichten */
     width: 100%; /* Volle Breite */
    
@@ -253,7 +255,7 @@ body {
     display: inline-block;
     padding: 10px 20px;
     font-size: 1em;
-    margin: 7px;
+   
     cursor: pointer;
     border: none;
     line-height: 130%;
@@ -264,14 +266,18 @@ body {
     text-align: center; /* Center align text */
     transition: background-color 0.3s;
     width: 100%;
+
+padding:18px 20px 18px 20px;
 }
 
 .btn-black {
+    margin-bottom: 7px;
     background-color: var(--btn-dark);
     color: #FFFFFF;
 }
 
 .btn-white{
+    margin-top: 7px;
     background-color: rgba(255, 255, 255, 0.9);
     color: var(--btn-dark);
 }
@@ -285,18 +291,37 @@ body {
     background-color: var(--red-line);
     color: #FFFFFF;
     text-transform: uppercase;
-    font-size: 16px;
-    padding: 10px 0;
+    font-size: 18px;
+    padding: 10px 0px;
     white-space: nowrap;
     overflow: hidden;
     position: relative;
-    height: 36px;
-    top: -172px;
+    height: 38px;
+    top: -170px;
     font-family: 'Merriweather';
-    font-weight: 100;
+    font-weight: 400;
+    
 }
 .scrolling-text {
     display: inline-block; /* Делаем элемент строчным */
     position: absolute; /* Позиционируем абсолютно */
     
+}
+
+
+#section-first{
+    position: relative;
+    top:13px;
+    margin:48px 20px 0 20px;
+}
+.section-first-text {
+    font-size: 28px;
+}
+.image-container img {
+    width: 100%;
+    height: auto;    
+}
+
+.image-container.first {
+    margin-top: 24px;
 }
