@@ -1,35 +1,36 @@
 "use sctrict";
-let currentSlideIndex = 0;
+let currentIndex = 0;
+const items = document.querySelectorAll(".carousel-item");
+const totalItems = items.length;
 
-function showSlide(index) {
-  const slides = document.querySelectorAll(".carousel-item");
-  const dots = document.querySelectorAll(".carousel-dots .dot");
-  if (index >= slides.length) {
-    currentSlideIndex = slides.length - 1;
-  } else if (index < 0) {
-    currentSlideIndex = 0;
-  } else {
-    currentSlideIndex = index;
-  }
-  const offset = -currentSlideIndex * 100;
-  document.querySelector(
-    ".carousel-inner"
-  ).style.transform = `translateX(${offset}%)`;
-  dots.forEach((dot) => dot.classList.remove("active"));
-  dots[currentSlideIndex].classList.add("active");
-}
+function updateCarousel() {
+  const inner = document.querySelector(".carousel-inner");
+  inner.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-function nextSlide() {
-  showSlide(currentSlideIndex + 1);
+  document.querySelectorAll(".dot").forEach((dot, index) => {
+    dot.classList.toggle("active", index === currentIndex);
+  });
 }
 
 function prevSlide() {
-  showSlide(currentSlideIndex - 1);
+  if (currentIndex > 0) {
+    currentIndex--;
+    updateCarousel();
+  }
+}
+
+function nextSlide() {
+  if (currentIndex < totalItems - 1) {
+    currentIndex++;
+    updateCarousel();
+  }
 }
 
 function currentSlide(index) {
-  showSlide(index);
+  currentIndex = index;
+  updateCarousel();
 }
 
-// Initialize the carousel
-showSlide(currentSlideIndex);
+document.addEventListener("DOMContentLoaded", () => {
+  updateCarousel();
+});

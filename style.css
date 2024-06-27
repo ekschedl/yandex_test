@@ -108,6 +108,7 @@
     --yellow:#FBCE51;
     --blau: #3057A2;
     --beige-gradient: #E8DCD1;
+    --grey-dots: #D9D9D9;
 
 
 
@@ -456,34 +457,42 @@ h1{
 #section-second .blau {
     margin-top: 12px;
 }
-/* -- Carousel -- */
+
+/* Carousel */
+
+.plane {
+    position: relative;
+    z-index: 100;
+    margin-top:20px;
+}
 
 .carousel {
     position: relative;
-    max-width: 600px;
-    margin: 0 auto;
+    top: -50px;
     overflow: hidden;
+    min-height: 300px;
 }
 
 .carousel-inner {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    height: 300px;
 }
 
 .carousel-item {
     min-width: 100%;
-    background-image: url('/images/copper_beige.png');
+    background-image: url(/images/copper_beige.png);
     background-size: cover;
     background-position: center;
     padding: 62px 24px 0 20px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     color: var(--font);
     font-family: "Golos Text";
-    font-size:18px;
+    font-size: 18px;
     text-align: center;
 }
 
@@ -493,44 +502,71 @@ h1{
     margin-bottom: 20px;
 }
 
-
+.content p {
+    padding: 0 0 10px 16px;
+    text-align: left;
+}
 
 .carousel-controls {
     position: absolute;
     bottom: 10px;
-    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    pointer-events: none;
+    margin-top: 28px;
 }
 
 .carousel-control {
-    background-color: rgba(128, 128, 128, 0.5);
-    color: white;
+    background: none; 
     border: none;
-    padding: 10px;
+    padding: 0; 
     cursor: pointer;
+    pointer-events: auto; 
 }
 
-.carousel-control:hover {
-    background-color: rgba(64, 64, 64, 0.8);
+.carousel-control img {
+    width: 36px; 
+    height: auto;
 }
 
 .carousel-dots {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 13px 16px;
 }
 
 .carousel-dots .dot {
-    width: 12px;
-    height: 12px;
-    margin: 0 5px;
-    background-color: rgba(128, 128, 128, 0.5);
+    width: 10px;
+    height: 10px;
+    margin: 0 3px; 
+    background-color: var(--grey-dots);
     border-radius: 50%;
     cursor: pointer;
 }
 
-.carousel-dots .dot.active {
-    background-color: rgba(64, 64, 64, 0.8);
+.carousel-dots .dot:first-child {
+    margin-left: 0; 
 }
+
+.carousel-dots .dot:last-child {
+    margin-right: 0; 
+}
+
+.carousel-dots .dot.active {
+    background-color: var(--font);
+}
+
+.carousel-controls {
+    position: relative;
+    bottom: auto;
+    top: auto;
+    width: 100%;
+}
+
+
+
+
