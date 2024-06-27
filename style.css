@@ -527,7 +527,8 @@ h1{
     pointer-events: auto; 
 }
 
-.carousel-control img {
+.carousel-control img,
+.carousel-control-participant img {
     width: 36px; 
     height: auto;
 }
@@ -569,4 +570,65 @@ h1{
 
 
 
+/* -- Section third --*/
+#section-third {
+    margin: 120px 20px 0 20px;
+}
 
+.carousel-participant {
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.carousel-participant-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-participant-item {
+    flex: 0 0 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    border: none; /* Убираем рамку */
+}
+
+.carousel-participant-item.active {
+    display: block;
+}
+
+.content-participant {
+    text-align: center;
+}
+
+.content-participant img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.carousel-controls-participant {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.carousel-control-participant {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.carousel-dots-participant {
+    display: none; /* Убираем точки для переключения слайдов */
+}
+
+.slide-number {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+}
