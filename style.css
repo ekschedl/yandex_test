@@ -100,10 +100,15 @@
 :root {
     --beige: #E7DBD0;
     --grey-dark: #595653; 
+    --grey-light:#D0D0D0;
     --red-line:#F54932;
     --font:#313131;
     --beige2:#E9DED4;
     --btn-dark: #1F1F1F;
+    --yellow:#FBCE51;
+    --blau: #3057A2;
+    --beige-gradient: #E8DCD1;
+
 
 
 }
@@ -117,27 +122,27 @@
 html {
     scroll-behavior: smooth;
     min-width: 375px;
-  
 }
 
 body {
-   
     font-family: 'Merriweather';
     color: var(--font);
     min-width: 375px;
     overflow-x: hidden;
 }
+
 h1{
     font-size: 36px;
 }
+
 .screen-reader-text {
     display: none;
 }
 
-
 .logo{
     height: 50px;
 }
+
 .logo img{
     width: 213px;
     height: 32px;
@@ -150,9 +155,7 @@ h1{
     display: flex;
     align-items: flex-start;
     text-align: center;
-
     flex-direction: column;
-  
     height: 812px;
 }
 
@@ -171,12 +174,12 @@ h1{
 
 .header-wrapper::before {
     background-image: url("/images/image\ 23.png");
-    opacity: 0.5; /* Настройте прозрачность для наложения */
+    opacity: 0.5; 
 }
 
 .header-wrapper::after {
     background-image: url('/images/copper_beige.png');
-    opacity: 0.5; /* Настройте прозрачность для наложения */
+    opacity: 0.5; 
 }
 
 .logo_text_buttons {
@@ -192,10 +195,6 @@ h1{
  
 }
 
-
-
-
-
 .image-wrapper img {
     width: 100%;
     height: auto;
@@ -203,7 +202,6 @@ h1{
     top: -127px;
     position: relative;
 }
-
 
 .text-upper {
    font-size: 36px;
@@ -213,27 +211,26 @@ h1{
 
 .header-text {
     display: flex;
-    flex-direction: column; /* Spaltenausrichtung für Flexbox */
+    flex-direction: column; 
     padding-top: 40px;
     line-height: 111%;
 }
 
 .header-text span:nth-child(1),
 .header-text span:nth-child(2) {
-    text-align: left; /* Links ausrichten */
-    width: 100%; /* Volle Breite */
+    text-align: left;
+    width: 100%; 
     min-width:335px;
 }
 
 .header-text span:nth-child(3) {
-    text-align: center; /* Zentriert ausrichten */
-    width: 100%; /* Volle Breite */
+    text-align: center; 
+    width: 100%; 
 }
 
 .header-text span:nth-child(4) {
-    text-align: right; /* Rechts ausrichten */
-    width: 100%; /* Volle Breite */
-   
+    text-align: right; 
+    width: 100%; 
 }
 
 .text-small {
@@ -243,7 +240,6 @@ h1{
     width: auto;
     font-size:18px;
     padding:24px 0 32px 0;
-    
 }
 
 .buttons {
@@ -257,19 +253,17 @@ h1{
     display: inline-block;
     padding: 10px 20px;
     font-size: 1em;
-   
     cursor: pointer;
     border: none;
     line-height: 130%;
     font-family: 'Golos Text';
     font-size: 16px;
     border-radius: 66px;
-    text-decoration: none; /* Remove underline from links */
-    text-align: center; /* Center align text */
+    text-decoration: none; 
+    text-align: center; 
     transition: background-color 0.3s;
     width: 100%;
-
-padding:18px 20px 18px 20px;
+    padding:18px 20px 18px 20px;
 }
 
 .btn-black {
@@ -288,7 +282,6 @@ padding:18px 20px 18px 20px;
     background-color: #555;
 }
 
-
 .red-line {
     background-color: var(--red-line);
     color: #FFFFFF;
@@ -302,25 +295,25 @@ padding:18px 20px 18px 20px;
     top: -170px;
     font-family: 'Merriweather';
     font-weight: 400;
-    
-}
-.scrolling-text {
-    display: inline-block; /* Делаем элемент строчным */
-    position: absolute; /* Позиционируем абсолютно */
-    
 }
 
+.scrolling-text {
+    display: inline-block; 
+    position: absolute; 
+}
 
 #section-first{
     position: relative;
     top:13px;
-    margin:48px 20px 0 20px;
+    margin:48px 20px 0 19px;
 }
+
 #section-first .text-upper {
     font-size: 28px;
     line-height: 38px;
     display: block;
 }
+
 .img-first img,
 .img-second img {
     width: 100%;
@@ -333,7 +326,7 @@ padding:18px 20px 18px 20px;
 
 .red {
     color: var(--red-line);
-   font-weight: 700;
+    font-weight: 700;
 }
 
 .img-second img {
@@ -344,33 +337,74 @@ padding:18px 20px 18px 20px;
 
 .styled-table {
     width: 100%;
-    border-collapse: collapse; /* Убираем двойные границы */
-    border: none; /* Убираем внешнюю границу */
+    border-collapse: collapse; 
+    border: none; 
+    font-size: 20px;
+    color: rgba(49, 49, 49, 0.7);
+    font-family: "Golos Text";
+    margin: 32px 0 0 0;
+    line-height: 24px;
+    font-weight: 400;
 }
 
 .styled-table td {
-    border: 1px solid grey; /* Внутренние одинарные серые границы */
-    padding: 8px; /* Отступы внутри ячеек */
+    border: 1px solid grey;            
 }
+.styled-table td{
+    margin: 12px 0 6px 0;}
 
 .styled-table td:nth-child(2) {
-    font-weight: bold; /* Жирный текст во втором столбце */
+    font-weight: bold; 
 }
 
 .styled-table tr:first-child td {
-    border-top: 0; /* Убираем верхнюю границу для первой строки */
+    border-top: 0; 
 }
 
 .styled-table tr td:first-child {
-    border-left: 0; /* Убираем левую границу для первого столбца */
+    border-left: 0; 
 }
 
 .styled-table tr:last-child td {
-    border-bottom: 0; /* Убираем нижнюю границу для последней строки */
+    border-bottom: 0; 
 }
 
 .styled-table tr td:last-child {
-    border-right: 0; /* Убираем правую границу для последнего столбца */
+    border-right: 0; 
+}
+
+.bold-text{
+    font-weight: 600 !important;
+    padding: 6px 0 15px 0 !important;
+    margin:0 !important;
+    color: var(--font)!important;
+}
+.red-strike {
+    position: relative;
+    color: black;
+    padding-right:2px;
+    margin-right:2px;
+}
+
+.red-strike::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--red-line);
+}
+.blau {
+    color: var(--blau);
+    line-height: 21.6px;
+    text-align: left;
+    font-size:18px;
+    font-family: "Golos Text";
+}
+
+#section-first .blau {
+    margin-top: 25px;
 }
 /* Media query для маленьких экранов */
 @media (max-width: 600px) {
@@ -378,16 +412,16 @@ padding:18px 20px 18px 20px;
     .styled-table tr {
         display: block;
     }
-    .styled-table tr {
+    /* .styled-table tr {
         margin-bottom: 10px;
-    }
+    } */
     .styled-table td {
         display: block;
         width: 100%;
         box-sizing: border-box;
         border: none;
         border-bottom: 1px solid grey;
-        margin-bottom: 5px;
+   
     }
     tbody {
         display: block;
@@ -397,9 +431,210 @@ padding:18px 20px 18px 20px;
         font-weight: normal;
     }
     .styled-table tr:last-child td {
-        border-bottom: none; /* Убираем нижнюю границу у ячеек в последней строке */
+        border-bottom: none; 
     }
+
     .styled-table td:nth-child(1) {
-        border: none; /* Убираем все границы у первого столбца */
+        border: none; 
     }
+}
+/* --- Section second*/
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.carousel {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    background-image: url('bild.png');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.carousel-item .content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.carousel-item .number {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(128, 128, 128, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+.carousel-control:hover {
+    background-color: rgba(64, 64, 64, 0.8);
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-dots .dot {
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background-color: rgba(128, 128, 128, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.carousel-dots .dot.active {
+    background-color: rgba(64, 64, 64, 0.8);
+}
+
+
+#section-second {
+    position: relative;
+    top: 13px;
+    margin: 120px 20px 0 20px;
+}
+
+#section-second h2 {
+    font-size: 36px;
+    line-height: 39.6px;
+}
+#section-second .blau {
+    margin-top: 12px;
+}
+/* -- Carousel -- */
+
+.carousel {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    background-image: url('/images/copper_beige.png');
+    background-size: cover;
+    background-position: center;
+    padding: 62px 24px 0 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--font);
+    font-family: "Golos Text";
+    font-size:18px;
+    text-align: center;
+}
+
+.carousel-item .content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.carousel-item .number {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    color: var(--font);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.carousel-controls {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.carousel-control {
+    background-color: rgba(128, 128, 128, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.carousel-control:hover {
+    background-color: rgba(64, 64, 64, 0.8);
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-dots .dot {
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background-color: rgba(128, 128, 128, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.carousel-dots .dot.active {
+    background-color: rgba(64, 64, 64, 0.8);
 }
