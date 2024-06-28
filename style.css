@@ -592,12 +592,10 @@ h1{
     flex: 0 0 100%;
     padding: 20px;
     box-sizing: border-box;
-    border: none; /* Убираем рамку */
+    border: none; 
 }
 
-.carousel-participant-item.active {
-    display: block;
-}
+
 
 .content-participant {
     text-align: center;
@@ -623,7 +621,7 @@ h1{
 }
 
 .carousel-dots-participant {
-    display: none; /* Убираем точки для переключения слайдов */
+    display: none; 
 }
 
 .slide-number {

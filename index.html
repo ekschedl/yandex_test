@@ -5,9 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Клуб Четырех коней</title>
-    <link rel="stylesheet" href="assets/icons/style.css">
     <link rel="stylesheet" href="style.css"> 
-    <link rel="stylesheet" href="assets/fonts/">
+    <link rel="stylesheet" href="/assets/fonts">
 </head>
 
 <body>
@@ -109,64 +108,64 @@
             <img src="images/plane_.png" alt="Самолет" title="Самолет">
            </div>
            
-            <div class="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="content">
-                            <img src="images/number_one.png" alt="Цифра 1" title="1.">
-                            <p>Строительство железнодорожной магистрали Москва-Васюки</p>
-                        </div>
-                        <div class="content">
-                            <img src="images/number_two.png" alt="Цифра 2" title="2.">
-                            <p>Открытие фешенебельной гостиницы «Проходная пешка» и других небоскрёбов</p>
-                        </div>
+           <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="content">
+                        <img src="images/number_one.png" alt="Цифра 1" title="1.">
+                        <p>Строительство железнодорожной магистрали Москва-Васюки</p>
                     </div>
-                    <div class="carousel-item">
-                        <div class="content">
-                            <img src="images/number_three.png" alt="Цифра 3" title="3.">
-                            <p>Поднятие сельского хозяйства в радиусе на тысячу километров: производство овощей, фруктов, икры, шоколадных конфет.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="content">
-                            <img src="images/number_four.png" alt="Цифра 4" title="4.">
-                            <p>Строительство дворца для турнира</p>
-                        </div>
-                        <div class="content">
-                            <img src="images/number_five.png" alt="Цифра 5" title="5.">
-                            <p>Размещение гаражей для гостевого автотранспорта.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="content">
-                            <img src="images/number_six.png" alt="Цифра 6" title="6.">
-                            <p>Постройка сверхмощной радиостанции для передачи всему миру сенсационных результатов</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="content">
-                            <img src="images/number_seven.png" alt="Цифра 7" title="7.">
-                            <p>Создание аэропорта «Большие Васюки» с регулярным отправлением почтовых самолётов и дирижаблей во все концы света, включая Лос-Анджелос и Мельбурн</p>
-                        </div>
+                    <div class="content">
+                        <img src="images/number_two.png" alt="Цифра 2" title="2.">
+                        <p>Открытие фешенебельной гостиницы «Проходная пешка» и других небоскрёбов</p>
                     </div>
                 </div>
-                <div class="carousel-controls">
-                    <button class="carousel-control prev" onclick="prevSlide()">
-                        <img src="/images/carousel button left.png" alt="Кнопка для прокрутки влево">
-                    </button>
-                    <div class="carousel-dots">
-                        <span class="dot" onclick="currentSlide(0)"></span>
-                        <span class="dot" onclick="currentSlide(1)"></span>
-                        <span class="dot" onclick="currentSlide(2)"></span>
-                        <span class="dot" onclick="currentSlide(3)"></span>
-                        <span class="dot" onclick="currentSlide(4)"></span>
+                <div class="carousel-item">
+                    <div class="content">
+                        <img src="images/number_three.png" alt="Цифра 3" title="3.">
+                        <p>Поднятие сельского хозяйства в радиусе на тысячу километров: производство овощей, фруктов, икры, шоколадных конфет.</p>
                     </div>
-                    <button class="carousel-control next" onclick="nextSlide()">
-                        <img src="/images/carousel button right.png" alt="Кнопка для прокрутки вправо">
-                    </button>
                 </div>
-                
-            </div>          
+                <div class="carousel-item">
+                    <div class="content">
+                        <img src="images/number_four.png" alt="Цифра 4" title="4.">
+                        <p>Строительство дворца для турнира</p>
+                    </div>
+                    <div class="content">
+                        <img src="images/number_five.png" alt="Цифра 5" title="5.">
+                        <p>Размещение гаражей для гостевого автотранспорта.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="content">
+                        <img src="images/number_six.png" alt="Цифра 6" title="6.">
+                        <p>Постройка сверхмощной радиостанции для передачи всему миру сенсационных результатов</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="content">
+                        <img src="images/number_seven.png" alt="Цифра 7" title="7.">
+                        <p>Создание аэропорта «Большие Васюки» с регулярным отправлением почтовых самолётов и дирижаблей во все концы света, включая Лос-Анджелос и Мельбурн</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-control prev" id="prevBtn">
+                    <img src="/images/carousel button left.png" alt="Кнопка для прокрутки влево">
+                </button>
+                <div class="carousel-dots">
+                    <span class="dot" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                    <span class="dot" data-slide="3"></span>
+                    <span class="dot" data-slide="4"></span>
+                </div>
+                <button class="carousel-control next" id="nextBtn">
+                    <img src="/images/carousel button right.png" alt="Кнопка для прокрутки вправо">
+                </button>
+            </div>
+        </div>
+                 
         </section>
 
         <section id="section-third">
@@ -178,7 +177,7 @@
                     <div class="carousel-participant-item active">
                         <div class="content-participant">
                             <img src="images/competitor.png" alt="Изображение участника">
-                            <p>Имя участника 1</p>
+                            <p>Ana</p>
                             <p>Статус участника 1</p>
                             <a href="#">Подробнее</a>
                         </div>
@@ -186,7 +185,7 @@
                     <div class="carousel-participant-item">
                         <div class="content-participant">
                             <img src="images/competitor.png" alt="Изображение участника">
-                            <p>Имя участника 2</p>
+                            <p>Katja</p>
                             <p>Статус участника 2</p>
                             <a href="#">Подробнее</a>
                         </div>
@@ -194,16 +193,16 @@
                     <div class="carousel-participant-item">
                         <div class="content-participant">
                             <img src="images/competitor.png" alt="Изображение участника">
-                            <p>Имя участника 2</p>
-                            <p>Статус участника 2</p>
+                            <p>Имя участника 3</p>
+                            <p>Статус участника 3</p>
                             <a href="#">Подробнее</a>
                         </div>
                     </div>
                     <div class="carousel-participant-item">
                         <div class="content-participant">
                             <img src="images/competitor.png" alt="Изображение участника">
-                            <p>Имя участника 2</p>
-                            <p>Статус участника 2</p>
+                            <p>Имя участника 4</p>
+                            <p>Статус участника 4</p>
                             <a href="#">Подробнее</a>
                         </div>
                     </div>
@@ -239,8 +238,6 @@
     
     </main>
 
-
-    <script src="script.js"></script>
-    <script src="script_two.js"></script>
+    <script src="./dist/main.js"></script>
 </body>
 </html>
