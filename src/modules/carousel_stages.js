@@ -1,7 +1,6 @@
-"use strict";
-
 const carousel_stages = () => {
-  console.log("test3");
+  console.log("carousel_stages  test3");
+
   let currentIndex = 0;
   const items = document.querySelectorAll(".carousel-item");
   const totalItems = items.length;
@@ -34,6 +33,12 @@ const carousel_stages = () => {
     updateCarousel();
   }
 
+  const prevButton = document.getElementById("prevBtn");
+  const nextButton = document.getElementById("nextBtn");
+
+  prevButton.addEventListener("click", prevSlide);
+  nextButton.addEventListener("click", nextSlide);
+
   document.addEventListener("DOMContentLoaded", () => {
     updateCarousel();
   });
@@ -44,18 +49,5 @@ const carousel_stages = () => {
     currentSlide,
   };
 };
-
-const carousel = carousel_stages();
-
-const prevButton = document.getElementById("prevBtn");
-const nextButton = document.getElementById("nextBtn");
-
-prevButton.addEventListener("click", () => {
-  carousel.prevSlide();
-});
-
-nextButton.addEventListener("click", () => {
-  carousel.nextSlide();
-});
 
 export default carousel_stages;
