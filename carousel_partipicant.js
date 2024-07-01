@@ -1,91 +1,53 @@
 "use strict";
 
 document.addEventListener("DOMContentLoaded", () => {
-  let currentIndex = 0;
   const items = document.querySelectorAll(".carousel-participant-item");
   const totalItems = items.length;
   const inner = document.querySelector(".carousel-participant-inner");
+  const slideWidth = items[0].offsetWidth; // Ширина одного слайда
 
-  const firstClone = items[0].cloneNode(true);
-  const lastClone = items[totalItems - 1].cloneNode(true);
+  let currentIndex = 0;
+  let intervalId = null; // Переменная для хранения ID интервала
 
-  firstClone.classList.add("clone");
-  lastClone.classList.add("clone");
-
-  inner.appendChild(firstClone);
-  inner.insertBefore(lastClone, items[0]);
-
+  // Функция для обновления карусели
   const updateCarousel = () => {
+    currentIndex = (currentIndex + totalItems) % totalItems;
+
     inner.style.transition = "transform 0.5s ease-in-out";
-    inner.style.transform = `translateX(-${(currentIndex + 1) * 100}%)`;
+    inner.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
 
     const slideNumber = document.querySelector(".slide-number");
-    let displayIndex =
-      (((currentIndex % totalItems) + totalItems) % totalItems) + 1;
+    const currentIndexElement = slideNumber.querySelector(".current-index");
+    const totalItemsElement = slideNumber.querySelector(".total-items");
 
-    // Создаем элемент span для стилизации totalItems
-    const totalItemsSpan = document.createElement("span");
-    totalItemsSpan.textContent = `${totalItems}`;
-    totalItemsSpan.style.color = "rgba(49, 49, 49, 0.6)";
+    if (currentIndexElement && totalItemsElement) {
+      currentIndexElement.textContent = currentIndex + 1;
+      totalItemsElement.textContent = totalItems;
+    }
 
-    // Обновляем содержимое slideNumber с учетом стилизации totalItems
-    slideNumber.textContent = `${displayIndex}/`;
-    slideNumber.appendChild(totalItemsSpan);
+    // Изменяем стиль текста currentIndex + 1 на желтый цвет
+    slideNumber.innerHTML = `${
+      currentIndex + 1
+    }<span style="color: rgba(49, 49, 49, 0.6);">/${totalItems}</span>`;
 
     items.forEach((item, index) => {
       item.classList.toggle("active", index === currentIndex);
     });
-
-    updateButtonStates(); // Вызываем функцию обновления состояния кнопок
   };
 
-  const updateButtonStates = () => {
-    // Обновляем состояние кнопки prev
-    if (currentIndex === 0) {
-      prevButton.disabled = true;
-      prevButton.querySelector("img").src = "/images/btn_disabled_left.png";
-    } else {
-      prevButton.disabled = false;
-      prevButton.querySelector("img").src =
-        "/images/carousel_button_left_black.png";
-    }
-
-    // Обновляем состояние кнопки next
-    if (currentIndex === totalItems - 1) {
-      nextButton.disabled = true;
-      nextButton.querySelector("img").src = "/images/btn_disabled_right.png";
-    } else {
-      nextButton.disabled = false;
-      nextButton.querySelector("img").src = "/images/carousel_button_right.png";
-    }
-  };
-
+  // Переключение на следующий слайд
   const nextSlide = () => {
     currentIndex++;
     updateCarousel();
-
-    if (currentIndex >= totalItems + 1) {
-      setTimeout(() => {
-        inner.style.transition = "none";
-        currentIndex = 0;
-        inner.style.transform = `translateX(-${(currentIndex + 1) * 100}%)`;
-      }, 500);
-    }
   };
 
+  // Переключение на предыдущий слайд
   const prevSlide = () => {
     currentIndex--;
     updateCarousel();
-
-    if (currentIndex < 0) {
-      setTimeout(() => {
-        inner.style.transition = "none";
-        currentIndex = totalItems;
-        inner.style.transform = `translateX(-${(currentIndex + 1) * 100}%)`;
-      }, 500);
-    }
   };
 
+  // Находим кнопки управления каруселью
   const prevButton = document.querySelector(
     ".carousel-control-participant.prev"
   );
@@ -93,40 +55,47 @@ document.addEventListener("DOMContentLoaded", () => {
     ".carousel-control-participant.next"
   );
 
-  // Функция для обновления изображения кнопки при hover и disabled
-  const updateButtonImage = (button, imageSrc) => {
-    button.querySelector("img").src = imageSrc;
+  // Переключение на предыдущий слайд при клике
+  prevButton.addEventListener("click", () => {
+    currentIndex--;
+    updateCarousel();
+    stopAutoScroll(); // Остановка автопрокрутки при клике на кнопку
+  });
+
+  // Переключение на следующий слайд при клике
+  nextButton.addEventListener("click", () => {
+    currentIndex++;
+    updateCarousel();
+    stopAutoScroll(); // Остановка автопрокрутки при клике на кнопку
+  });
+
+  // Функция для запуска автопрокрутки
+  const startAutoScroll = () => {
+    intervalId = setInterval(() => {
+      currentIndex++;
+      updateCarousel();
+    }, 4000);
   };
 
-  prevButton.addEventListener("mouseenter", () => {
-    updateButtonImage(prevButton, "/images/btn_hover_left.png");
-  });
-
-  prevButton.addEventListener("mouseleave", () => {
-    updateButtonImage(prevButton, "/images/carousel_button_left_black.png");
-  });
-
-  nextButton.addEventListener("mouseenter", () => {
-    updateButtonImage(nextButton, "/images/btn_hover_right.png");
-  });
-
-  nextButton.addEventListener("mouseleave", () => {
-    updateButtonImage(nextButton, "/images/carousel_button_right.png");
-  });
-
-  const startAutoplay = () => {
-    setInterval(nextSlide, 4000);
-  };
-
-  let intervalId = startAutoplay();
-
-  const stopAutoplay = () => {
+  // Функция для остановки автопрокрутки
+  const stopAutoScroll = () => {
     clearInterval(intervalId);
   };
 
-  const sliderContainer = document.querySelector(".carousel-participant");
-  sliderContainer.addEventListener("mouseenter", stopAutoplay);
-  sliderContainer.addEventListener("mouseleave", startAutoplay);
+  // Автоматический запуск автопрокрутки при загрузке страницы
+  startAutoScroll();
 
+  // Остановка автопрокрутки при наведении на карусель
+  const sliderContainer = document.querySelector(".carousel-participant");
+  sliderContainer.addEventListener("mouseenter", () => {
+    stopAutoScroll();
+  });
+
+  // Возобновление автопрокрутки при уходе курсора с карусели
+  sliderContainer.addEventListener("mouseleave", () => {
+    startAutoScroll();
+  });
+
+  // Инициализация карусели
   updateCarousel();
 });

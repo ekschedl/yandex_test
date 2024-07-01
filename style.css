@@ -160,7 +160,7 @@ h1{
     align-items: flex-start;
     text-align: center;
     flex-direction: column;
-    height: 812px;
+    height: 825px;
 }
 
 .header-wrapper::before,
@@ -314,7 +314,6 @@ h1{
 
 #section-first{
     position: relative;
-    top:13px;
     margin:48px 20px 0 19px;
 }
 
@@ -352,7 +351,7 @@ h1{
     font-size: 20px;
     color: rgba(49, 49, 49, 0.7);
     font-family: "Golos Text";
-    margin: 32px 0 0 0;
+    margin: 44px 0 0 0;
     line-height: 24px;
     font-weight: 400;
 }
@@ -458,7 +457,6 @@ h1{
 
 #section-second {
     position: relative;
-    top: 13px;
     margin: 120px 20px 0 20px;
 }
 
@@ -522,7 +520,6 @@ h1{
 
 .carousel-controls {
     position: absolute;
-    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -540,11 +537,6 @@ h1{
     pointer-events: auto; 
 }
 
-.carousel-control img,
-.carousel-control-participant img {
-    width: 36px; 
-    height: auto;
-}
 
 .carousel-dots {
     display: flex;
@@ -576,10 +568,14 @@ h1{
 
 .carousel-controls {
     position: relative;
-    bottom: auto;
+   
     top: auto;
     width: 100%;
 }
+
+
+
+
 
 /* -- Section third --*/
 #section-third {
@@ -590,7 +586,7 @@ h1{
     position: relative;
     overflow: hidden;
     width: auto;
-    max-width: 600px;
+    
 }
 
 .carousel-participant-inner {
@@ -609,10 +605,11 @@ h1{
 
 .content-participant {
     text-align: center;
+    
 }
 
 .content-participant img {
-    max-width: 100%;
+    max-width: 320px;
     border-radius: 50%;
 }
 
@@ -620,7 +617,7 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    margin: 40px auto;
 }
 
 .carousel-control-participant {
@@ -680,4 +677,18 @@ h1{
 .content-participant a:hover {
     background-color: var(--blau);
     color: var(--white);
+}
+
+
+.carousel-participant-item {
+    flex: 0 0 calc(100% / 3); /* По умолчанию показываем по три слайда в ряд */
+    box-sizing: border-box;
+    border: none;
+}
+
+@media (max-width: 768px) {
+    /* Для мобильных устройств показываем по одному слайду в ряд */
+    .carousel-participant-item {
+        flex: 0 0 100%;
+    }
 }
