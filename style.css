@@ -617,7 +617,7 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 40px auto;
+    margin: 0px auto 100px auto;
 }
 
 .carousel-control-participant {

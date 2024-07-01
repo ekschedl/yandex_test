@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const items = document.querySelectorAll(".carousel-participant-item");
   const totalItems = items.length;
   const inner = document.querySelector(".carousel-participant-inner");
-  const slideWidth = items[0].offsetWidth; // Ширина одного слайда
+  const slideWidth = items[0].getBoundingClientRect().width;
 
   let currentIndex = 0;
   let intervalId = null; // Переменная для хранения ID интервала
@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Изменяем стиль текста currentIndex + 1 на желтый цвет
+
     slideNumber.innerHTML = `${
       currentIndex + 1
     }<span style="color: rgba(49, 49, 49, 0.6);">/${totalItems}</span>`;
