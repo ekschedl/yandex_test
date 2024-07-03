@@ -152,7 +152,7 @@ h1{
   
     background-image: url("/images/1921-horizont.png");
    
-    background-size: contain;
+    background-size: contain; 
 } 
 
 .logo { 
@@ -168,6 +168,10 @@ h1{
 .text_buttons-wrapper{
     display: flex;
     flex-direction: column;
+    position: relative;
+    align-items: center; 
+    text-align: center;
+    top:0;
 }
 
 .text-upper {
