@@ -190,6 +190,7 @@ img {
 .texts-buttons-wrapper {
     display: flex;
     margin: 0 20px;
+    flex-direction: column;
 }
 
 .header-text {
@@ -225,29 +226,56 @@ img {
     padding:24px 0 32px 0;
 }
 
-.buttons {
+/* .buttons {
     display: flex;
     align-items: center;
     margin: 0 20px;
     position: absolute;
     top: 100%;
     flex-wrap: wrap;
-    width: fit-content;
-    left: 0%;
+    justify-content: center;
+} */
+.buttons {
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+    position: absolute;
+    top: 100%; /* Оставляем этот стиль для позиционирования */
+    flex-wrap: wrap; /* Разрешаем перенос элементов на маленьких экранах */
+    justify-content: center; /* Центрируем элементы по горизонтали */
 }
 
-.button {
+/* .button {
     display: inline-block;
     cursor: pointer;
     border: none;
     line-height: 130%;
     font-family: 'Golos Text';
     border-radius: 66px;
-    text-decoration: none; 
-    text-align: center; 
+    text-decoration: none;
+    text-align: center;
     transition: background-color 0.3s;
     width: 100%;
-    padding:18px 20px 18px 20px;
+    max-width: 330px;
+    padding: 18px;
+    height: 60px;
+    
+} */
+.button {
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    line-height: 130%; /* Высота строки для кнопки */
+    font-family: 'Golos Text'; /* Используем шрифт 'Golos Text' */
+    border-radius: 66px; /* Задаем скругление углов */
+    text-decoration: none;
+    text-align: center; /* Выравниваем текст по центру */
+    transition: background-color 0.3s;
+    width: 100%; /* Растягиваем кнопку по ширине родительского контейнера */
+    max-width: 330px; /* Максимальная ширина кнопки */
+    padding: 18px; /* Внутренние отступы */
+    height: 60px; /* Высота кнопки */
+
 }
 
 .btn-black {
@@ -271,6 +299,31 @@ img {
     background-color: var(--btn-dark);
     color: var(--white);
 }
+
+@media (min-width: 500px) {
+    .buttons {
+        position: relative; 
+        flex-wrap: nowrap; 
+        justify-content: space-between; 
+        margin: 0;
+    }
+
+    .button {
+        flex: 1; 
+        max-width: 228px; 
+        height: 60px; 
+        padding: 10px 40px;
+    }
+
+    .btn-white {
+        margin-top: 0;
+    }
+
+    .btn-black {
+        margin: 0px;
+    }
+}
+
 
 .red-line {
     background-color: var(--red-line);
