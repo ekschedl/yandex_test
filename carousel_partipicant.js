@@ -4,51 +4,46 @@ document.addEventListener("DOMContentLoaded", () => {
   const items = document.querySelectorAll(".carousel-participant-item");
   const totalItems = items.length;
   const inner = document.querySelector(".carousel-participant-inner");
-  const slideWidth = items[0].getBoundingClientRect().width;
 
   let currentIndex = 0;
-  let intervalId = null; // Переменная для хранения ID интервала
+  let intervalId = null;
 
-  // Функция для обновления карусели
   const updateCarousel = () => {
-    currentIndex = (currentIndex + totalItems) % totalItems;
+    const slideCount = window.innerWidth >= 768 ? 3 : 1;
+    const totalSlides = Math.ceil(totalItems / slideCount);
+    const slideWidth = items[0].getBoundingClientRect().width + 20;
+    const maxIndex = totalSlides - 1;
+    currentIndex = (currentIndex + maxIndex + 1) % (maxIndex + 1);
 
     inner.style.transition = "transform 0.5s ease-in-out";
-    inner.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    inner.style.transform = `translateX(-${
+      currentIndex * slideWidth * slideCount
+    }px)`;
 
     const slideNumber = document.querySelector(".slide-number");
-    const currentIndexElement = slideNumber.querySelector(".current-index");
-    const totalItemsElement = slideNumber.querySelector(".total-items");
-
-    if (currentIndexElement && totalItemsElement) {
-      currentIndexElement.textContent = currentIndex + 1;
-      totalItemsElement.textContent = totalItems;
-    }
-
-    // Изменяем стиль текста currentIndex + 1 на желтый цвет
-
     slideNumber.innerHTML = `${
-      currentIndex + 1
+      (currentIndex + 1) * slideCount
     }<span style="color: rgba(49, 49, 49, 0.6);">/${totalItems}</span>`;
 
     items.forEach((item, index) => {
-      item.classList.toggle("active", index === currentIndex);
+      item.classList.toggle(
+        "active",
+        index >= currentIndex * slideCount &&
+          index < (currentIndex + 1) * slideCount
+      );
     });
   };
 
-  // Переключение на следующий слайд
   const nextSlide = () => {
     currentIndex++;
     updateCarousel();
   };
 
-  // Переключение на предыдущий слайд
   const prevSlide = () => {
     currentIndex--;
     updateCarousel();
   };
 
-  // Находим кнопки управления каруселью
   const prevButton = document.querySelector(
     ".carousel-control-participant.prev"
   );
@@ -56,47 +51,38 @@ document.addEventListener("DOMContentLoaded", () => {
     ".carousel-control-participant.next"
   );
 
-  // Переключение на предыдущий слайд при клике
   prevButton.addEventListener("click", () => {
-    currentIndex--;
-    updateCarousel();
-    stopAutoScroll(); // Остановка автопрокрутки при клике на кнопку
+    prevSlide();
+    stopAutoScroll();
   });
 
-  // Переключение на следующий слайд при клике
   nextButton.addEventListener("click", () => {
-    currentIndex++;
-    updateCarousel();
-    stopAutoScroll(); // Остановка автопрокрутки при клике на кнопку
+    nextSlide();
+    stopAutoScroll();
   });
 
-  // Функция для запуска автопрокрутки
   const startAutoScroll = () => {
     intervalId = setInterval(() => {
-      currentIndex++;
-      updateCarousel();
+      nextSlide();
     }, 4000);
   };
 
-  // Функция для остановки автопрокрутки
   const stopAutoScroll = () => {
     clearInterval(intervalId);
   };
 
-  // Автоматический запуск автопрокрутки при загрузке страницы
   startAutoScroll();
 
-  // Остановка автопрокрутки при наведении на карусель
   const sliderContainer = document.querySelector(".carousel-participant");
   sliderContainer.addEventListener("mouseenter", () => {
     stopAutoScroll();
   });
 
-  // Возобновление автопрокрутки при уходе курсора с карусели
   sliderContainer.addEventListener("mouseleave", () => {
     startAutoScroll();
   });
 
-  // Инициализация карусели
+  window.addEventListener("resize", updateCarousel);
+
   updateCarousel();
 });
