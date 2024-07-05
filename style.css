@@ -335,16 +335,6 @@ img {
 
 /* * Table * */
 
-.styled-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.styled-table td {
-
-    border: 1px solid var(--grey-light);
-}
-
 #section-first .red {
     color: var(--red-line);
     font-weight: 700;}
@@ -360,7 +350,7 @@ img {
     width: 100%;
     border-collapse: collapse; 
     border: none; 
-    font-size: var(--font-size-medium2);
+   font-size: var(--font-size-large);
     color: rgba(49, 49, 49, 0.7);
     font-family: "Golos Text";
     margin: 44px 0 0 0;
@@ -770,8 +760,7 @@ footer .div-down {
 #section-first,
 #section-second,
 #section-third {
-    margin-left:72px;
-    margin-right: 72px;
+    margin: 80px 40px 0;
 }
     .row {
         display: flex;
@@ -833,10 +822,6 @@ footer .div-down {
 
     /** Section second min-width: 768px **/
 
-    #section-second, 
-    #section-third    {
-        margin-top: 200px;
-    }
 
     .text-upper-wrapper .blau {
         top: -43px;
@@ -955,6 +940,10 @@ footer .div-down {
     }
 
     /** Section third min-width: 768px **/
+    #section-third    {
+        margin-top: 200px;
+    }
+    
     .carousel-participant {
         display: flex;
         flex-direction: column-reverse;
@@ -968,7 +957,7 @@ footer .div-down {
         box-sizing: border-box;
         border: none;
     }
-    
+
     .carousel-controls-participant{ 
         display: flex;
         justify-content: flex-end;
@@ -989,6 +978,13 @@ footer .div-down {
 @media (min-width: 1366px)  {
 
     /** Header  min 1366px **/
+
+    .col-21 {
+        flex: 1;
+        top: -100px;
+        position: relative;
+    }
+
     .header-wrapper {
         background-image: url(/images/main-big-screen.svg);
         background-repeat: no-repeat;
