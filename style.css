@@ -503,7 +503,7 @@ img {
     justify-content: flex-start;
     color: var(--font);
     font-family: "Golos Text";
-    font-size: 18px;
+    font-size: var(--font-size-medium);
     text-align: center;
 }
 
@@ -704,7 +704,7 @@ footer .div-down {
 }
 
 
-@media (min-width: 768px) {
+@media (min-width: 836px) {
   
     /**Header responsive min-width: 768px **/
     .header-wrapper {
@@ -734,6 +734,7 @@ footer .div-down {
         flex-wrap: nowrap; 
         justify-content: space-between; 
         margin: 0;
+        gap: 25px;
     }
 
     .button {
@@ -760,7 +761,7 @@ footer .div-down {
 #section-first,
 #section-second,
 #section-third {
-    margin: 80px 40px 0;
+    margin: 80px 20px 0;
 }
     .row {
         display: flex;
@@ -853,6 +854,7 @@ footer .div-down {
    
     .carousel-inner .carousel-item {
         display: contents; 
+        font-size: var(--font-size-large);
     }
 
     .carousel-item .content {
