@@ -638,18 +638,23 @@ img {
 
 .content-participant p {
     font-family: "Golos Text";
+    padding: 0 10px;
 } 
 
 .name{
    font-weight: 600;
    font-size: 24px;
    color: var(--font);
+   min-height: 3em; 
+   line-height: 1.5em; 
+   margin-bottom: 5px; 
 }
 
 .status {
     font-size: var(--font-size-large);
     color:  rgba(49, 49, 49, 0.6);
     padding-top: 8px;
+    margin-top: auto;
 }
 
 .content-participant a {
@@ -949,6 +954,9 @@ footer .div-down {
         top: -45px;
     }
 
+    .status {
+        height:80px;
+    }
     .carousel-participant-item {
         flex: 0 0 calc(100% / 3); 
 
