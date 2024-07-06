@@ -97,9 +97,8 @@
     font-weight: 800;
     src: url('./assets/fonts/golos-text-v4-cyrillic_latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
+
 :root {
-    /* --beige: #E7DBD0; */
-    /* --grey-dark: #595653;  */
     --grey-light:#D0D0D0;
     --red-line:#F54932;
     --font:#313131;
@@ -107,11 +106,9 @@
     --btn-dark: #1F1F1F; 
     --yellow:#FBCE51;
     --blau: #3057A2;
-    /* --beige-gradient: #E8DCD1; */
     --grey-dots: #D9D9D9;
     --white: #FFFFFF;
 
-     /* Базовые размеры шрифтов для различных экранов */
     --font-size-xxlarge: clamp(24px, 2.5vw + 1rem, 36px);
     --font-size-xlarge: clamp(18px, 1.8vw + 1rem, 28px);
     --font-size-large: clamp(16px, 1.5vw + 1rem, 20px); 
@@ -332,7 +329,6 @@ img {
     display: none;
 }
 
-
 /* * Table * */
 
 #section-first .red {
@@ -417,7 +413,7 @@ img {
 
 
 /*  Table Responsive small screen */
-@media (max-width: 768px) {
+@media (max-width: 836px) { 
     .styled-table,
     .styled-table tr {
         display: block;
@@ -706,7 +702,7 @@ footer .div-down {
 
 @media (min-width: 836px) {
   
-    /**Header responsive min-width: 768px **/
+    /**Header responsive min-width: 836px **/
     .header-wrapper {
         background-image: url(/images/main-media-screen.svg);
         background-repeat: no-repeat;
@@ -757,7 +753,7 @@ footer .div-down {
     }
  
 
-    /** Section first min-width: 768px **/
+    /** Section first min-width: 836px  **/
 #section-first,
 #section-second,
 #section-third {
@@ -821,7 +817,7 @@ footer .div-down {
         padding: 16px !important;
     }
 
-    /** Section second min-width: 768px **/
+    /** Section second min-width: 836px  **/
 
 
     .text-upper-wrapper .blau {
@@ -941,7 +937,7 @@ footer .div-down {
         grid-row: 1 / span 1;
     }
 
-    /** Section third min-width: 768px **/
+    /** Section third min-width: 836px  **/
     #section-third    {
         margin-top: 200px;
     }
@@ -966,7 +962,7 @@ footer .div-down {
         margin: 0px;
     }
 
-    /** Footer min-width: 768px **/
+    /** Footer min-width: 836px  **/
 
     footer   {
         margin-top: 140px;
